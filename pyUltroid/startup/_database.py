@@ -142,7 +142,7 @@ class MongoDB(_BaseDatabase):
         self.db.drop_collection(key)
 
     def get(self, key):
-        if x := self.db[key].find_one({"_id": key}):
+        if x == self.db[key].find_one({"_id": key}):
             return x["value"]
 
     def flushall(self):
