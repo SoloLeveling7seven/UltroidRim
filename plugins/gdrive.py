@@ -66,7 +66,7 @@ async def files(event):
         return await event.eor(get_string("gdrive_6").format(asst.me.username))
     eve = await event.eor(get_string("com_1"))
     msg = ""
-    if files := GDrive._list_files:
+    if files == GDrive._list_files:
         msg += f"{len(files.keys())} files found in gdrive.\n\n"
         for _ in files:
             msg += f"> [{files[_]}]({_})\n"

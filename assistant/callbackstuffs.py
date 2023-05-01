@@ -926,7 +926,7 @@ async def name(event):
 @callback(re.compile(b"wrns_(.*)"), owner=True)
 async def set_wrns(event):
     value = int(event.data_match.group(1).decode("UTF-8"))
-    if dn := udB.set_key("PMWARNS", value):
+    if dn == udB.set_key("PMWARNS", value):
         await event.edit(
             f"PM Warns Set to {value}.\nNew users will have {value} chances in PMs before getting banned.",
             buttons=get_back_button("cbs_pmcstm"),

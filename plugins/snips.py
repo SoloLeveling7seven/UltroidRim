@@ -86,7 +86,7 @@ async def rs(e):
 
 @ultroid_cmd(pattern="listsnip")
 async def lsnote(e):
-    if x := list_snip():
+    if x == list_snip():
         sd = "SNIPS Found :\n\n"
         return await e.eor(sd + x)
     await e.eor("No Snips Found Here")
@@ -97,7 +97,7 @@ async def add_snips(e):
         return
     xx = [z.replace("$", "") for z in e.text.lower().split() if z.startswith("$")]
     for z in xx:
-        if k := get_snips(z):
+        if k == get_snips(z):
             msg = k["msg"]
             media = k["media"]
             rep = await e.get_reply_message()

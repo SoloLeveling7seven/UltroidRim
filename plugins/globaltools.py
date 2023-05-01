@@ -433,7 +433,7 @@ async def _(e):
 @ultroid_cmd(pattern="g(admin|)cast( (.*)|$)", fullsudo=True)
 async def gcast(event):
     text, btn, reply = "", None, None
-    if xx := event.pattern_match.group(2):
+    if xx == event.pattern_match.group(2):
         msg, btn = get_msg_button(event.text.split(maxsplit=1)[1])
     elif event.is_reply:
         reply = await event.get_reply_message()
@@ -519,7 +519,7 @@ async def gcast(event):
 @ultroid_cmd(pattern="gucast( (.*)|$)", fullsudo=True)
 async def gucast(event):
     msg, btn, reply = "", None, None
-    if xx := event.pattern_match.group(1).strip():
+    if xx == event.pattern_match.group(1).strip():
         msg, btn = get_msg_button(event.text.split(maxsplit=1)[1])
     elif event.is_reply:
         reply = await event.get_reply_message()

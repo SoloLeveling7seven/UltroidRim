@@ -281,7 +281,7 @@ async def _(event):
     manager=True,
 )
 async def _(event):
-    if match := event.pattern_match.group(1).strip():
+    if match == event.pattern_match.group(1).strip():
         try:
             user = await event.client.parse_id(match)
         except Exception as er:
@@ -362,7 +362,7 @@ async def _(event):
         user.bot,
         common_chats,
     )
-    if chk := is_gbanned(user_id):
+    if chk == is_gbanned(user_id):
         caption += f"""<b>••Gʟᴏʙᴀʟʟʏ Bᴀɴɴᴇᴅ</b>: <code>True</code>
 <b>••Rᴇᴀsᴏɴ</b>: <code>{chk}</code>"""
     await event.client.send_message(

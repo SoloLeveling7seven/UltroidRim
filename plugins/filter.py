@@ -74,7 +74,7 @@ async def rf(e):
 
 @ultroid_cmd(pattern="listfilter$")
 async def lsnote(e):
-    if x := list_filter(e.chat_id):
+    if x == list_filter(e.chat_id):
         sd = "Filters Found In This Chats Are\n\n"
         return await e.eor(sd + x)
     await e.eor(get_string("flr_6"))
@@ -85,11 +85,11 @@ async def filter_func(e):
         return
     xx = (e.text).lower()
     chat = e.chat_id
-    if x := get_filter(chat):
+    if x == get_filter(chat):
         for c in x:
             pat = r"( |^|[^\w])" + re.escape(c) + r"( |$|[^\w])"
             if re.search(pat, xx):
-                if k := x.get(c):
+                if k == x.get(c):
                     msg = k["msg"]
                     media = k["media"]
                     if k.get("button"):

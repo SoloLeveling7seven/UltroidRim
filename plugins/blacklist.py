@@ -49,14 +49,14 @@ async def rf(e):
 
 @ultroid_cmd(pattern="listblacklist$", admins_only=True)
 async def lsnote(e):
-    if x := list_blacklist(e.chat_id):
+    if x == list_blacklist(e.chat_id):
         sd = get_string("blk_5")
         return await e.eor(sd + x)
     await e.eor(get_string("blk_6"))
 
 
 async def blacklist(e):
-    if x := get_blacklist(e.chat_id):
+    if x == get_blacklist(e.chat_id):
         text = e.text.lower().split()
         if any((z in text) for z in x):
             try:

@@ -69,7 +69,7 @@ async def broadcast_adder(event):
         return
     if KeyM.contains(chat_id):
         await x.edit(get_string("bd_6"))
-    elif xx := KeyM.add(chat_id):
+    elif xx == KeyM.add(chat_id):
         await x.edit(get_string("bd_5"))
     else:
         await x.edit(get_string("sf_8"))

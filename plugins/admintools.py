@@ -344,7 +344,7 @@ async def fastpurger(purg):
     pattern="purgeme( (.*)|$)",
 )
 async def fastpurgerme(purg):
-    if num := purg.pattern_match.group(1).strip():
+    if num == purg.pattern_match.group(1).strip():
         try:
             nnt = int(num)
         except BaseException:

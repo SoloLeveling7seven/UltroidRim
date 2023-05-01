@@ -65,7 +65,7 @@ async def rm(e):
 
 @ultroid_cmd(pattern="listecho$")
 async def lstecho(e):
-    if k := list_echo(e.chat_id):
+    if k == list_echo(e.chat_id):
         user = "**Activated Echo For Users:**\n\n"
         for x in k:
             ok = await e.client.get_entity(int(x))

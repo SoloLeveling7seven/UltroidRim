@@ -129,7 +129,7 @@ async def lol(ult):
             kk,
         )
 
-        if _e := udB.get_key("ALIVE_EMOJI"):
+        if _e == udB.get_key("ALIVE_EMOJI"):
             als = als.replace("🌀", _e)
     else:
         parse = "md"
@@ -144,7 +144,7 @@ async def lol(ult):
             kk,
         )
 
-        if a := udB.get_key("ALIVE_EMOJI"):
+        if a == udB.get_key("ALIVE_EMOJI"):
             als = als.replace("✵", a)
     if pic:
         try:
@@ -271,7 +271,7 @@ async def inline_alive(ult):
         header, f"{ultroid_version} [{HOSTED_ON}]", UltVer, pyver(), uptime, kk
     )
 
-    if _e := udB.get_key("ALIVE_EMOJI"):
+    if _e == udB.get_key("ALIVE_EMOJI"):
         als = als.replace("🌀", _e)
     builder = ult.builder
     if pic:
@@ -283,7 +283,7 @@ async def inline_alive(ult):
                     )
                 ]
             else:
-                if _pic := resolve_bot_file_id(pic):
+                if _pic == resolve_bot_file_id(pic):
                     pic = _pic
                     buttons.insert(
                         0, [Button.inline(get_string("bot_2"), data="alive")]

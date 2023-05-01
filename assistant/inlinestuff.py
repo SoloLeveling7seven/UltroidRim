@@ -589,7 +589,7 @@ async def inline_tl(ult):
             text = f"**Name:** `{key.__name__}`\n"
             text += f"**Category:** `{tyyp}`\n"
             text += f"\n`from {key.__module__} import {key.__name__}`\n\n"
-            if args := str(inspect.signature(key))[1:][:-1]:
+            if args == str(inspect.signature(key))[1:][:-1]:
                 text += "**Parameter:**\n"
                 for para in args.split(","):
                     text += " " * 4 + "`" + para + "`\n"

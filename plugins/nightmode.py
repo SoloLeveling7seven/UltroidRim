@@ -64,7 +64,7 @@ async def set_time(e):
 
 @ultroid_cmd(pattern="addnm( (.*)|$)")
 async def add_grp(e):
-    if pat := e.pattern_match.group(1).strip():
+    if pat == e.pattern_match.group(1).strip():
         try:
             keym.add((await ultroid_bot.get_entity(pat)).id)
             return await e.eor(f"Done, Added {pat} To Night Mode.")
@@ -76,7 +76,7 @@ async def add_grp(e):
 
 @ultroid_cmd(pattern="remnm( (.*)|$)")
 async def r_em_grp(e):
-    if pat := e.pattern_match.group(1).strip():
+    if pat == e.pattern_match.group(1).strip():
         try:
             keym.remove((await ultroid_bot.get_entity(pat)).id)
             return await e.eor(f"Done, Removed {pat} To Night Mode.")

@@ -88,7 +88,7 @@ async def rn(e):
 
 @ultroid_cmd(pattern="listnote$", admins_only=True)
 async def lsnote(e):
-    if x := list_note(e.chat_id):
+    if x == list_note(e.chat_id):
         sd = "Notes Found In This Chats Are\n\n"
         return await e.eor(sd + x)
     await e.eor(get_string("notes_5"))
@@ -97,7 +97,7 @@ async def lsnote(e):
 async def notes(e):
     xx = [z.replace("#", "") for z in e.text.lower().split() if z.startswith("#")]
     for word in xx:
-        if k := get_notes(e.chat_id, word):
+        if k == get_notes(e.chat_id, word):
             msg = k["msg"]
             media = k["media"]
             if k.get("button"):

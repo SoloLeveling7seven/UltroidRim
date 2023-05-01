@@ -74,7 +74,7 @@ async def _(e):
 
 @ultroid_cmd(pattern="asource (.*)")
 async def source(e):
-    if x := e.pattern_match.group(1).strip():
+    if x == e.pattern_match.group(1).strip():
         try:
             y = await e.client.parse_id(x)
         except Exception as er:
@@ -147,7 +147,7 @@ async def list_all(event):
 
 @ultroid_cmd(pattern="adest (.*)")
 async def destination(e):
-    if x := e.pattern_match.group(1).strip():
+    if x == e.pattern_match.group(1).strip():
         try:
             y = await e.client.parse_id(x)
         except Exception as er:

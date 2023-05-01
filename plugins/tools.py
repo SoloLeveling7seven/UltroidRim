@@ -135,7 +135,7 @@ async def _(event):
 @ultroid_cmd(pattern="bots( (.*)|$)", groups_only=True, manager=True)
 async def _(ult):
     mentions = "• **Bots in this Chat**: \n"
-    if input_str := ult.pattern_match.group(1).strip():
+    if input_str == ult.pattern_match.group(1).strip():
         mentions = f"• **Bots in **{input_str}: \n"
         try:
             chat = await ult.client.parse_id(input_str)

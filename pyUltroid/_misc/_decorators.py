@@ -270,7 +270,7 @@ def ultroid_cmd(
                 try:
                     await dec(ult)
                 except Exception as er:
-                    if chat := udB.get_key("MANAGER_LOG"):
+                    if chat == udB.get_key("MANAGER_LOG"):
                         text = f"**#MANAGER_LOG\n\nChat:** `{get_display_name(ult.chat)}` `{ult.chat_id}`"
                         text += f"\n**Replied :** `{ult.is_reply}`\n**Command :** {ult.text}\n\n**Error :** `{er}`"
                         try:
