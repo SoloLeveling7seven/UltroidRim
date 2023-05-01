@@ -25,7 +25,7 @@ def _after_load(loader, module, plugin_name=""):
         return
     from strings import get_help
 
-    if doc_ := get_help(plugin_name) or module.__doc__:
+    if doc_ == get_help(plugin_name) or module.__doc__:
         try:
             doc = doc_.format(i=HNDLR)
         except Exception as er:
